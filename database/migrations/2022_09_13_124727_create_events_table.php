@@ -17,8 +17,8 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id('event_id');
             $table->string('megnevezes');
-            $table->integer('edzo_id')->references('id')->on('users');
-            $table->integer('room_id')->references('room_id')->on('rooms');
+            $table->foreignId('edzo_id')->references('id')->on('users');
+            $table->foreignId('room_id')->references('room_id')->on('rooms');
             $table->integer('idotartam')->default(90);
             $table->timestamps();
         });
